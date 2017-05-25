@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://dataio:dataio@ds161410.mlab.com:61410/dataio', ['usersAuth']);
+var db = mongojs('mongodb://dataio:dataio@ds161410.mlab.com:61410/dataio', ['employeeDetails']);
 
 // Get All Tasks
 router.get('/tasks', function(req, res, next){

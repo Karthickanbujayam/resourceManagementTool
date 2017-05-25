@@ -1,0 +1,58 @@
+<div>
+	LANDING PAGE tab1 template.... 
+</div>
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12"> 
+	     
+	               		  <div class="alert alert-success" ng-show="msg">{{msg}}</div>
+	               		  
+						    <h4>Please select an row to edit:</h4>
+						      <div style="text-align:right">
+						      <button class="btn btn-primary" ng-disabled="editmn" ng-hide="editmode" ng-click="edit()">Edit</button>
+						      </div>
+						      <form name="editform" role="form"  ng-show="editmode">
+						  <div class="form-group">
+						    <label for="nm">Username:</label>   
+						    <input name="nm" type="text" id="nm" ng-model="rowUnderEdit.username" />
+						    </div>
+						    <div class="form-group">
+						    <label for="pnt">Password:</label>   
+						    <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.password" />
+						    
+						      
+						    </div>
+
+						  <div class="form-froup">
+						    <button type="button" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save()">Save</button>
+						     <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+						  </div>
+						      </form>
+						      <br/>
+						      <table class="table  table-striped" border="2">
+						      <thead>
+						      <th>Select for editing</th>
+						        <th>Username</th>
+						         <th>Password</th>
+						      </thead>
+						        <tbody>
+						          <tr ng-repeat="nm in MyRecCollection"  ng-class="{mcls:nm.checked}">
+						            <td>
+						              <input ng-disabled="editmode" type="radio" value="{{nm._id}}" name="ip" ng-model="nm.checked" ng-click="resetAll(nm)" />
+						            </td>
+						            <td>{{nm.username}}</td>
+						            <td>{{nm.password}}</td>
+						          </tr>
+						        </tbody>
+						      </table>
+						      <span ng-class="{mcls:checked}">{{nm.id}}</span>
+						 
+						   
+	 
+	               		 
+	 					
+	               
+	        </div>
+    </div>
+    </div>
+
